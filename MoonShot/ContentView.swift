@@ -22,8 +22,8 @@ struct CustomText:View {
 
 struct ContentView: View {
     var body: some View {
-        ScrollView(){
-            VStack(spacing:10){
+        ScrollView(.horizontal){
+            LazyHStack(spacing:10){ // lazy will have more space than regular HStack or VStack and it will load the view that is need to present.
                 ForEach(0..<100){
                     CustomText(text:"Item \($0)").font(.title)
                 }
